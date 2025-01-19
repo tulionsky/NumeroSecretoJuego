@@ -22,6 +22,7 @@ function verificarIntento(){
         }
         intentos++
         limpiarCaja();
+        colocarCursor();
             }   
     return;
 }
@@ -58,6 +59,7 @@ function condicionesIniciales(){
     asignarTextoElemento('p',`Indica un numero del 1 al ${numeroMaximo}`);
     numeroSecreto = generarNumeroSecreto();
     intentos = 1;
+    colocarCursor();
 }
 
 function reiniciarJuego(){
@@ -65,6 +67,10 @@ function reiniciarJuego(){
     condicionesIniciales();
     document.getElementById('reiniciar').setAttribute('disabled','true');
 
+}
+
+function colocarCursor(){
+    document.getElementById('valorUsuario').focus();
 }
 
 condicionesIniciales();
